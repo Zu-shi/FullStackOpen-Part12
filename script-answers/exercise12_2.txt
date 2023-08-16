@@ -1,0 +1,36 @@
+zushi@eee:/mnt/e/docker$ docker run -it ubuntu bash
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+b237fe92c417: Pull complete
+Digest: sha256:ec050c32e4a6085b423d36ecd025c0d3ff00c38ab93a3d71a460ff1c44fa6d77
+Status: Downloaded newer image for ubuntu:latest
+root@c93a7f39638e:/# exit
+exit
+zushi@eee:/mnt/e/docker$ script
+Script started, output log file is 'typescript'.
+
+
+Script started on 2023-08-16 19:10:06-04:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="120" LINES="30"]
+[?2004h]0;zushi@eee: /mnt/e/docker [01;32mzushi@eee[00m:[01;34m/mnt/e/docker[00m$ [7mdocker run -it ubuntu bash[27mdocker run -it ubuntu bash
+[?2004l
+[?2004h]0;root@0972ef8e0c23: / root@0972ef8e0c23:/# mkdir usr            dd    cd usr
+[?2004l
+[?2004h]0;root@0972ef8e0c23: /usr root@0972ef8e0c23:/usr# mkdir src
+[?2004l
+mkdir: cannot create directory 'src': File exists
+[?2004h]0;root@0972ef8e0c23: /usr root@0972ef8e0c23:/usr# cd src
+[?2004l
+[?2004h]0;root@0972ef8e0c23: /usr/src root@0972ef8e0c23:/usr/src# mkdir app
+[?2004l
+[?2004h]0;root@0972ef8e0c23: /usr/src root@0972ef8e0c23:/usr/src# cd app
+[?2004l
+[?2004h]0;root@0972ef8e0c23: /usr/src/app root@0972ef8e0c23:/usr/src/app# touch index.js
+[?2004l
+[?2004h]0;root@0972ef8e0c23: /usr/src/app root@0972ef8e0c23:/usr/src/app# exit
+[?2004l
+exit
+[?2004h]0;zushi@eee: /mnt/e/docker [01;32mzushi@eee[00m:[01;34m/mnt/e/docker[00m$ exit
+[?2004l
+exit
+
+Script done on 2023-08-16 19:11:23-04:00 [COMMAND_EXIT_CODE="0"]
