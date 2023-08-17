@@ -1,0 +1,500 @@
+Script started on 2023-08-17 16:50:46-04:00 [TERM="xterm-256color" TTY="/dev/pts/7" COLUMNS="120" LINES="30"]
+[?2004h]0;zushi@eee: /mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[01;32mzushi@eee[00m:[01;34m/mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[00m$ cat dockerfile
+[?2004lFROM node:16
+WORKDIR /usr/src/app
+
+COPY --chown=node:node . .
+RUN npm ci
+
+ENV DEBUG=playground:*
+
+USER node
+CMD npm start[?2004h]0;zushi@eee: /mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[01;32mzushi@eee[00m:[01;34m/mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[00m$ cat .dockerignore
+[?2004l./node_modules
+.gitignore
+./.git[?2004h]0;zushi@eee: /mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[01;32mzushi@eee[00m:[01;34m/mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[00m$ docker build -t . .n .o .d .e ._ .b .a .c .k .e .n .d ._ .2 .[1P .[1P .
+[?2004l[1A[1B[0G[?25l[+] Building 0.0s (0/0)                                                                                                 
+[?25h[1A[0G[?25l[+] Building 0.1s (1/2)                                                                                                 
+ => [internal] load build definition from Dockerfile                                                               0.1s
+[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[?25h[1A[1A[1A[1A[1A[0G[?25l[+] Building 0.2s (2/3)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m => [internal] load metadata for docker.io/library/node:16                                                         0.1s
+[?25h[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 0.3s (3/3)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[?25h[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 0.4s (4/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m => [internal] load build context                                                                                  0.1s
+ => => transferring context: 617B                                                                                  0.1s
+[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 0.6s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               0.1s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 0.7s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               0.3s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 0.9s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               0.4s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 1.0s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               0.6s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 1.2s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               0.7s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 1.3s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               0.9s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 1.5s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               1.0s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 1.6s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               1.2s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 1.8s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               1.3s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 1.9s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               1.5s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 2.1s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               1.6s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 2.2s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               1.8s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 2.4s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               1.9s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 2.5s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               2.1s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 2.7s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               2.2s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 2.8s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               2.4s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 3.0s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               2.5s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 3.1s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               2.7s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 3.3s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               2.8s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 3.4s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               3.0s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 3.6s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               3.1s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 3.7s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               3.3s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 3.9s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               3.4s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 4.0s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               3.6s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 4.2s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               3.7s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 4.3s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               3.9s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 4.5s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               4.0s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 4.7s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               4.2s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 4.8s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               4.3s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 4.9s (7/8)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m => [4/4] RUN npm ci                                                                                               4.4s
+[2m => => # 15 vulnerabilities (7 moderate, 6 high, 2 critical)                                                           
+[0m[2m => => # To address issues that do not require attention, run:                                                         
+[0m[2m => => #   npm audit fix                                                                                               
+[0m[2m => => # To address all issues, run:                                                                                   
+[0m[2m => => #   npm audit fix --force                                                                                       
+[0m[2m => => # Run `npm audit` for details.                                                                                  
+[0m[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 5.1s (8/9)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m[34m => [4/4] RUN npm ci                                                                                               4.5s
+[0m => exporting to image                                                                                             0.1s
+ => => exporting layers                                                                                            0.1s
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+[4A[0G[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 5.2s (8/9)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m[34m => [4/4] RUN npm ci                                                                                               4.5s
+[0m => exporting to image                                                                                             0.2s
+ => => exporting layers                                                                                            0.2s
+[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 5.3s (8/9)                                                                                                 
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m[34m => [4/4] RUN npm ci                                                                                               4.5s
+[0m => exporting to image                                                                                             0.3s
+[34m => => exporting layers                                                                                            0.3s
+[0m[?25h[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Building 5.3s (9/9) FINISHED                                                                                        
+[34m => [internal] load build definition from Dockerfile                                                               0.1s
+[0m[34m => => transferring dockerfile: 169B                                                                               0.0s
+[0m[34m => [internal] load .dockerignore                                                                                  0.1s
+[0m[34m => => transferring context: 74B                                                                                   0.1s
+[0m[34m => [internal] load metadata for docker.io/library/node:16                                                         0.3s
+[0m[34m => [internal] load build context                                                                                  0.1s
+[0m[34m => => transferring context: 653B                                                                                  0.1s
+[0m[34m => [1/4] FROM docker.io/library/node:16@sha256:818b5adc1ee4a04e8ad5efeb70871571efe414315ad7f16844f24f9962ffdc7e   0.0s
+[0m[34m => CACHED [2/4] WORKDIR /usr/src/app                                                                              0.0s
+[0m[34m => [3/4] COPY --chown=node:node . .                                                                               0.0s
+[0m[34m => [4/4] RUN npm ci                                                                                               4.5s
+[0m[34m => exporting to image                                                                                             0.4s
+[0m[34m => => exporting layers                                                                                            0.3s
+[0m[34m => => writing image sha256:1759848337a8f82ca7d961d4c4e043f627100fabcb91ae9c86d3c0786638e68c                       0.0s
+[0m[34m => => naming to docker.io/library/node_backend                                                                    0.0s
+[0m[?25h[?2004h]0;zushi@eee: /mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[01;32mzushi@eee[00m:[01;34m/mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[00m$ docker container[K[K[K[K[K[K[K[K[Kimage ls
+[?2004lREPOSITORY         TAG       IMAGE ID       CREATED          SIZE
+node_backend       latest    1759848337a8   11 seconds ago   929MB
+<none>             <none>    a8f009107750   3 minutes ago    929MB
+express-server     latest    9fa3e2833393   20 hours ago     915MB
+fs-hello-world     latest    8e4dca41394a   21 hours ago     909MB
+hello-node-world   latest    f4c20add05de   21 hours ago     259MB
+ubuntu             latest    01f29b872827   13 days ago      77.8MB
+hello-world        latest    9c7a54a9a43c   3 months ago     13.3kB
+[?2004h]0;zushi@eee: /mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[01;32mzushi@eee[00m:[01;34m/mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[00m$ docker run -it node_backend
+[?2004l
+> todo-express-backend@0.0.0 start
+> node ./bin/www
+
+^C[?2004h]0;zushi@eee: /mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[01;32mzushi@eee[00m:[01;34m/mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[00m$ 
+[?2004l[?2004h]0;zushi@eee: /mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[01;32mzushi@eee[00m:[01;34m/mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[00m$ 
+[?2004l[?2004h]0;zushi@eee: /mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[01;32mzushi@eee[00m:[01;34m/mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[00m$ docker run -it node_backend[C[1@-[1@p[1@ [1@3[1@0[1@0[1@0[1@:[1@3[1@0[1@0[1@0[1@ 
+[?2004l
+> todo-express-backend@0.0.0 start
+> node ./bin/www
+
+[0mGET / [32m200 [0m2.344 ms - 12[0m
+[0mGET / [32m200 [0m0.534 ms - 12[0m
+[0mGET / [32m200 [0m0.286 ms - 12[0m
+[0mGET / [32m200 [0m0.236 ms - 12[0m
+[0mGET / [32m200 [0m0.279 ms - 12[0m
+^C[?2004h]0;zushi@eee: /mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[01;32mzushi@eee[00m:[01;34m/mnt/e/docker/FullStackOpen12b/exercises/125/todo-app/todo-backend[00m$ exit
+[?2004lexit
+
+Script done on 2023-08-17 16:52:51-04:00 [COMMAND_EXIT_CODE="130"]
