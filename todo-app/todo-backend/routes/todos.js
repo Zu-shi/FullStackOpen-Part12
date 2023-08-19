@@ -22,6 +22,7 @@ router.post('/', async (req, res) => {
 const singleRouter = express.Router();
 
 const findByIdMiddleware = async (req, res, next) => {
+  console.log("test1")
   const { id } = req.params
   console.log('id')
   console.log(id)
@@ -43,12 +44,30 @@ singleRouter.get('/', async (req, res) => {
 });
 
 /* PUT todo. */
-singleRouter.put('/', async (req, res) => {
-  const result = await req.todo.save()
-  const todos = await Todo.find({})
-  const result2 = await redisIndex.setAsync("todos-added", todos.length)
+router.put('/:id', async (req, res) => {
 
-  res.send(result).status(200).end();
+  const { id } = req.params
+  console.log('body')
+  console.log(id)
+  console.log(req.body)
+  req.todo = await Todo.findById(id)
+
+  if (!req.todo) {
+    const result = new Todo({
+      ...req.todo,
+      "_id": id
+    }).save()
+    const todos = await Todo.find({})
+    let num = await redisIndex.getAsync("todos-added")
+    console.log(num)
+    num = num == null ? 0 : parseInt(num)
+    const result2 = await redisIndex.setAsync("todos-added", num + 1)
+
+    res.send(result).status(200).end();
+  }
+  else {
+    res.send(req.todo).status(200).end();
+  }
   // res.sendStatus(405); // Implement this
 });
 
