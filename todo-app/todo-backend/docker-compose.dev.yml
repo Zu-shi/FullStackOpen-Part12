@@ -19,6 +19,8 @@ services:
       - 6379:6379
     volumes:
       - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./redis_data:/data
+    command: [ 'redis-server', '--appendonly', 'yes' ] # Overwrite the CMD
 
 volumes:
   mongo_data:
