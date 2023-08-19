@@ -1,0 +1,9 @@
+exit
+db.todos.find()
+db.todos.find
+db.todos
+show collections
+db
+use the_database
+db
+show dbs
