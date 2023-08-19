@@ -36,6 +36,10 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Remove data folders
+mongo_data
+redis_data
+
 # Typescript v1 declaration files
 typings/
 
