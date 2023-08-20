@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "SET PORT=3001 && node ./bin/www",
-    "dev": "SET PORT=3001 && nodemon ./bin/www"
+    "start": "cross-env PORT=3001 node ./bin/www",
+    "dev": "cross-env PORT=3001 nodemon --legacy-watch ./bin/www"
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "debug": "~2.6.9",
     "dotenv": "^16.3.1",
     "express": "~4.16.1",

@@ -6,9 +6,9 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
     deleteTodo(todo)
   }
 
-  const onClickComplete = (todo) => () => {
-    completeTodo(todo)
-  }
+  // const onClickComplete = (todo) => () => {
+  //   completeTodo(todo)
+  // }
 
   return (
     <>

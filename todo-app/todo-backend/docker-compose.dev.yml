@@ -11,7 +11,7 @@ services:
     volumes:
       - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
       - mongo_data:/data/db
-  redis:
+  redisdb:
     image: redis
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
@@ -21,6 +21,20 @@ services:
       - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
       - ./redis_data:/data
     command: [ 'redis-server', '--appendonly', 'yes' ] # Overwrite the CMD
+  server:
+    image: todo_backend_dev
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3001:3001
+    environment:
+      - REDIS_URL=redis://redisdb:6379
+      - MONGO_URL=mongodb://the_username:the_password@mongo:3456/the_database
+  debug-helper:
+    image: busybox
 
 volumes:
   mongo_data:
