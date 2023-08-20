@@ -1,14 +1,15 @@
 import React from 'react'
 
-const onClickDelete = (todo) => () => {
-  deleteTodo(todo)
-}
+const NotDoneTodoItem = ({ todo, deleteTodo, completeTodo }) => {
 
-const onClickComplete = (todo) => () => {
-  completeTodo(todo)
-}
+  const onClickDelete = () => {
+    deleteTodo(todo)
+  }
 
-const NotDoneTodoItem = (todo, deleteTodo, completeTodo) => {
+  const onClickComplete = () => {
+    completeTodo(todo)
+  }
+
   return (
     <div>
       <>
@@ -16,8 +17,8 @@ const NotDoneTodoItem = (todo, deleteTodo, completeTodo) => {
           This todo is not done
         </span>
         <span>
-          <button onClick={onClickDelete(todo)}> Delete </button>
-          <button onClick={onClickComplete(todo)}> Set as done </button>
+          <button onClick={onClickDelete}> Delete </button>
+          <button onClick={onClickComplete}> Set as done </button>
         </span>
       </>
     </div>
