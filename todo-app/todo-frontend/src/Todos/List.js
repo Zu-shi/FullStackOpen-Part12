@@ -1,4 +1,5 @@
 import React from 'react'
+import NotDoneTodoItem from './NotDoneTodoItem'
 
 const TodoList = ({ todos, deleteTodo, completeTodo }) => {
   const onClickDelete = (todo) => () => {
@@ -22,21 +23,13 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
         )
 
         const notDoneInfo = (
-          <>
-            <span>
-              This todo is not done
-            </span>
-            <span>
-              <button onClick={onClickDelete(todo)}> Delete </button>
-              <button onClick={onClickComplete(todo)}> Set as done </button>
-            </span>
-          </>
+          <NotDoneTodoItem deleteTodo={deleteTodo} completeTodo={completeTodo} todo={todo} />
         )
 
         return (
           <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '70%', margin: 'auto' }}>
             <span>
-              {todo.text} 
+              {todo.text}
             </span>
             {todo.done ? doneInfo : notDoneInfo}
           </div>
