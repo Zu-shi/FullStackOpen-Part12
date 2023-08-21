@@ -21,3 +21,51 @@ services:
     container_name: reverse-proxy
     depends_on:
       - app
+  mongo:
+    image: mongo
+    user: root
+    ports:
+      - 3456:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+    volumes:
+      - ./todo-backend/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - mongo_data:/data/db
+  mongo-debug:
+    image: mongo
+    user: root
+    ports:
+      - 3457:27018
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+  redisdb:
+    image: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - 6379:6379
+    volumes:
+      - ./todo-backend/redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./todo-backend/redis_data:/data
+    command: [ 'redis-server', '--appendonly', 'yes' ] # Overwrite the CMD
+  server:
+    image: todo_backend_dev
+    build:
+      context: ./todo-backend/
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./todo-backend/:/usr/src/app
+    ports:
+      - 3001:3001
+    environment:
+      - REDIS_URL=redis://redisdb:6379
+      - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
+  debug-helper:
+    image: busybox
+
+volumes:
+  mongo_data:
